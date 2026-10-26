@@ -12,8 +12,10 @@
 | Kimi Code | `~/.kimi-code/AGENTS.md` | ✅ 已链接 |
 | OpenCode | `~/.config/opencode/AGENTS.md` | ⬜ 未链接（2026-09-10 决定仅链 4 个工具，待用到时再建） |
 
+链接必须是指向 `/Users/mj/.agents/AGENTS.md` 的软链，用 `ls -l` 检查：普通文件就是副本，会和源文件分叉。2026-10-12 Claude Code 与 Codex 的链接被写成了普通文件（内容停在 9/18 版），2026-10-26 已重建。
+
 ```bash
-# 已完成（2026-09-10）
+# 2026-09-10 建立；2026-10-26 重建 Claude Code、Codex、Kimi Code 三条
 ln -s /Users/mj/.agents/AGENTS.md /Users/mj/.claude/CLAUDE.md
 ln -s /Users/mj/.agents/AGENTS.md /Users/mj/.zcode/AGENTS.md
 ln -s /Users/mj/.agents/AGENTS.md /Users/mj/.codex/AGENTS.md
@@ -59,4 +61,4 @@ ln -s /Users/mj/.agents/agents/implementer.md /Users/mj/.claude/agents/implement
 ln -s /Users/mj/.agents/agents/code-reviewer.md /Users/mj/.claude/agents/code-reviewer.md
 ```
 
-首次新建 `~/.claude/agents` 目录后需要重启 Claude Code；目录已被监视后，新增或修改定义会自动加载。
+首次新建 `~/.claude/agents` 目录后需要重启 Claude Code。之后在 `~/.claude/agents/` 下增改会自动加载；直接改源文件 `agents/*.md` 是否触发热重载未验证，改完没生效就重启。源文件改名或删除会让链接静默失效，改名后要重建链接。
