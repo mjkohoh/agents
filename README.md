@@ -52,13 +52,4 @@ ln -s /Users/mj/.agents/AGENTS.md /Users/mj/.kimi-code/AGENTS.md
 
 代码 findings 交给 `implementer` 修复，再由 `code-reviewer` 复审；spec/tickets findings 交回主会话和用户修改。同一阶段最多两轮修复，仍有阻塞问题就暂停。
 
-### 链接记录（2026-10-26）
-
-```bash
-ln -s /Users/mj/.agents/agents/Explore.md /Users/mj/.claude/agents/Explore.md
-ln -s /Users/mj/.agents/agents/spec-reviewer.md /Users/mj/.claude/agents/spec-reviewer.md
-ln -s /Users/mj/.agents/agents/implementer.md /Users/mj/.claude/agents/implementer.md
-ln -s /Users/mj/.agents/agents/code-reviewer.md /Users/mj/.claude/agents/code-reviewer.md
-```
-
 首次新建 `~/.claude/agents` 目录后需要重启 Claude Code。之后在 `~/.claude/agents/` 下增改会自动加载；直接改源文件 `agents/*.md` 是否触发热重载未验证，改完没生效就重启。源文件改名或删除会让链接静默失效，改名后要重建链接。
